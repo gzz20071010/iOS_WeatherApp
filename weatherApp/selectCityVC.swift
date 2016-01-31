@@ -31,6 +31,9 @@ class selectCityVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         searchBar.returnKeyType = UIReturnKeyType.Done
         cities.append(tempCity)
         
+        tableView.hidden = true
+        searchBar.hidden = true
+        
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -69,7 +72,6 @@ class selectCityVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         }else{
             city = cities[indexPath.row]
         }
-        print(city.name)
         performSegueWithIdentifier("ViewController", sender: city)
     }
     
@@ -115,8 +117,10 @@ class selectCityVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     
     
     @IBAction func submitButtonPRessed(sender: AnyObject) {
-        if textFeild.text != nil {
+        if textFeild.text != nil && "\(textFeild.text)" != "" {
             let city = City(name: textFeild.text!)
+            cities.append(city)
+            tableView.reloadData()
             performSegueWithIdentifier("ViewController2", sender: city)
         }
     }
