@@ -19,7 +19,7 @@ class selectCityVC: UIViewController, UITableViewDataSource, UITableViewDelegate
     var cities = [City]()
     var filteredCity = [City]()
     var isSearchMode = false
-    let tempCity = City(name: "newyork")
+    let tempCity = City(name: "New York")
     var city: City!
 
 

@@ -14,23 +14,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var tempLbl: UILabel!
     @IBOutlet weak var weatherPicture: UIImageView!
     
-    var city :City!
+    var city = City(name: "newyork")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if city != nil {
-            print("here")
+       // if city != nil {
             city.downloadCityDetails { () -> () in
-                print("zhe")
                 self.updateUI()
             }
-        }
+     //   }
 
     }
 
     func updateUI(){
         print("city name: \(city.name)")
         nameLbl.text = city.name
+        tempLbl.text = city.temp + " F°"
+        weatherPicture.image = UIImage(named: "\(city.weather)")
         
     }
 

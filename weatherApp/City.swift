@@ -44,8 +44,12 @@ class City{
     }
     
     init (name: String){
+        let replaced = name.stringByReplacingOccurrencesOfString(" ", withString: "")
+        print("teimmedString")
+        print(replaced)
+        print("trimmedString")
         self._name = name
-        self._cityURL = "\(BASE_URL)\(name)\(API_KEY)"
+        self._cityURL = "\(BASE_URL)\(replaced)\(API_KEY)"
     }
     
     func downloadCityDetails(completed: DownloadComplete){
@@ -60,6 +64,18 @@ class City{
                     print("1")
                     print(self.name)
                     print(self._name)
+                }
+                if let main = descDict["main"] as? Dictionary<String, AnyObject>{
+               
+                    if let temp = main["temp"] as? Double{
+                        self._temp = "\(kToF(temp))"
+                    }
+                }
+                if let weather = descDict["weather"] as? [Dictionary<String, AnyObject>]{
+                    if let main = weather[0]["main"]{
+                        print(main)
+                        self._weather = main as! String
+                    }
                 }
             }else{
                 self._name = ""

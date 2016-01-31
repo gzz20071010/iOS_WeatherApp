@@ -11,3 +11,10 @@ import Foundation
 let API_KEY = "&appid=a6532c48f7aa4c6aeb394e6cfdedd6d0"
 let BASE_URL = "http://api.openweathermap.org/data/2.5/weather?q="
 typealias DownloadComplete = () -> ()
+
+
+func kToF(k: Double) ->Int {
+    let f = k*9.0/5.0 - 459.67
+    let y = Int(round(f))
+    return y
+}
