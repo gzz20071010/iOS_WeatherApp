@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Select CityVC-->
         <scene sceneID="x7i-Ev-juJ">
             <objects>
-                <viewController id="Ptj-Ud-1GE" sceneMemberID="viewController">
+                <viewController id="Ptj-Ud-1GE" customClass="selectCityVC" customModule="weatherApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1l7-Qt-sRW"/>
                         <viewControllerLayoutGuide type="bottom" id="DTx-Wd-9XM"/>
@@ -26,13 +26,29 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityCell" id="etw-8L-74m">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityCell" id="etw-8L-74m" customClass="TableViewCell" customModule="weatherApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="etw-8L-74m" id="OGx-PN-Zhg">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRg-EU-M95">
+                                                    <rect key="frame" x="8" y="8" width="42" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SRg-EU-M95" firstAttribute="leading" secondItem="OGx-PN-Zhg" secondAttribute="leadingMargin" id="BDP-aP-y8v"/>
+                                                <constraint firstItem="SRg-EU-M95" firstAttribute="top" secondItem="OGx-PN-Zhg" secondAttribute="topMargin" id="D0W-T1-7al"/>
+                                                <constraint firstItem="SRg-EU-M95" firstAttribute="bottom" secondItem="OGx-PN-Zhg" secondAttribute="bottomMargin" id="Hwn-Th-Y6n"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="SRg-EU-M95" id="sf6-d2-6Nw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -49,6 +65,11 @@
                             <constraint firstAttribute="trailing" secondItem="Dig-Ys-YRb" secondAttribute="trailing" id="iqJ-4Z-Sw7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="Dig-Ys-YRb" id="e2D-Kl-1On"/>
+                        <outlet property="tableView" destination="Pur-fM-qvZ" id="lys-7j-Hu4"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="ViewController" id="Cro-ea-zsX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dF4-v7-PWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -110,7 +131,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ptj-Ud-1GE" kind="show" id="WuK-yu-V2r"/>
+                                    <segue destination="Ptj-Ud-1GE" kind="show" identifier="selectCityVC" id="WuK-yu-V2r"/>
                                 </connections>
                             </button>
                         </subviews>
