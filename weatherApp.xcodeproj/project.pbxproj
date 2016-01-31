@@ -11,6 +11,8 @@
 		179B4BE51C5D7440005F4FC8 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179B4BE41C5D7440005F4FC8 /* City.swift */; };
 		179B4BE81C5D76B8005F4FC8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179B4BE71C5D76B8005F4FC8 /* Constants.swift */; };
 		179B4BEC1C5D7F97005F4FC8 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179B4BEB1C5D7F97005F4FC8 /* TableViewCell.swift */; };
+		179B4BF01C5DA692005F4FC8 /* city.list.json in Resources */ = {isa = PBXBuildFile; fileRef = 179B4BEF1C5DA692005F4FC8 /* city.list.json */; };
+		179B4BF21C5DA6B7005F4FC8 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179B4BF11C5DA6B7005F4FC8 /* JSON.swift */; };
 		17E783131C5D1B1500C2E44C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E783121C5D1B1500C2E44C /* AppDelegate.swift */; };
 		17E783151C5D1B1500C2E44C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E783141C5D1B1500C2E44C /* ViewController.swift */; };
 		17E783181C5D1B1500C2E44C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17E783161C5D1B1500C2E44C /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		179B4BE41C5D7440005F4FC8 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		179B4BE71C5D76B8005F4FC8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		179B4BEB1C5D7F97005F4FC8 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		179B4BEF1C5DA692005F4FC8 /* city.list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.json; sourceTree = "<group>"; };
+		179B4BF11C5DA6B7005F4FC8 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		17E7830F1C5D1B1500C2E44C /* weatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E783121C5D1B1500C2E44C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17E783141C5D1B1500C2E44C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				179B4BE71C5D76B8005F4FC8 /* Constants.swift */,
+				179B4BEF1C5DA692005F4FC8 /* city.list.json */,
+				179B4BF11C5DA6B7005F4FC8 /* JSON.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -195,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17E7831D1C5D1B1500C2E44C /* LaunchScreen.storyboard in Resources */,
+				179B4BF01C5DA692005F4FC8 /* city.list.json in Resources */,
 				17E7831A1C5D1B1500C2E44C /* Assets.xcassets in Resources */,
 				17E783181C5D1B1500C2E44C /* Main.storyboard in Resources */,
 			);
@@ -256,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				179B4BE81C5D76B8005F4FC8 /* Constants.swift in Sources */,
+				179B4BF21C5DA6B7005F4FC8 /* JSON.swift in Sources */,
 				179B4BE21C5D7322005F4FC8 /* selectCityVC.swift in Sources */,
 				17E783151C5D1B1500C2E44C /* ViewController.swift in Sources */,
 				179B4BEC1C5D7F97005F4FC8 /* TableViewCell.swift in Sources */,

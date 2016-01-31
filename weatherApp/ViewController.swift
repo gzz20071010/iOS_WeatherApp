@@ -21,9 +21,11 @@ class ViewController: UIViewController {
         if city != nil {
             print("here")
             city.downloadCityDetails { () -> () in
+                print("zhe")
                 self.updateUI()
             }
         }
+
     }
 
     func updateUI(){

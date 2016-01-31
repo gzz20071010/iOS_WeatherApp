@@ -10,13 +10,18 @@ import UIKit
 
 class selectCityVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
+    @IBOutlet var textFeild: UITextField!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet var submit: UIButton!
     
     var cities = [City]()
     var filteredCity = [City]()
     var isSearchMode = false
     let tempCity = City(name: "newyork")
+    var city: City!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +41,6 @@ class selectCityVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("cityCell", forIndexPath: indexPath) as? TableViewCell{
             
-            let city: City!
             if isSearchMode{
                 city = filteredCity[indexPath.row]
             }else{
@@ -93,6 +97,27 @@ class selectCityVC: UIViewController, UITableViewDataSource, UITableViewDelegate
                     detailVC.city = city
                 }
             }
+        }
+        if segue.identifier == "ViewController2"{
+          
+            if let detailVC = segue.destinationViewController as? ViewController{
+                if textFeild.text != nil {
+                    let city = City(name: textFeild.text!)
+                    
+             //   }
+                //if let city = sender as? City{
+                    detailVC.city = city
+                }
+            }
+        }
+    }
+    
+    
+    
+    @IBAction func submitButtonPRessed(sender: AnyObject) {
+        if textFeild.text != nil {
+            let city = City(name: textFeild.text!)
+            performSegueWithIdentifier("ViewController2", sender: city)
         }
     }
 }

@@ -59,11 +59,12 @@ class City{
                     self._name = name
                     print("1")
                     print(self.name)
+                    print(self._name)
                 }
             }else{
                 self._name = ""
             }
+            completed()
         }
-        completed()
     }
 }
