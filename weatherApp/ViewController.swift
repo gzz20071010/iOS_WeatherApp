@@ -10,17 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var city:City!
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var tempLbl: UILabel!
+    @IBOutlet weak var weatherPicture: UIImageView!
+    
+    var city :City!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        if city != nil {
+            print("here")
+            city.downloadCityDetails { () -> () in
+                self.updateUI()
+            }
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func updateUI(){
+        print("city name: \(city.name)")
+        nameLbl.text = city.name
+        
     }
-
 
 }
 

@@ -65,6 +65,7 @@ class selectCityVC: UIViewController, UITableViewDataSource, UITableViewDelegate
         }else{
             city = cities[indexPath.row]
         }
+        print(city.name)
         performSegueWithIdentifier("ViewController", sender: city)
     }
     

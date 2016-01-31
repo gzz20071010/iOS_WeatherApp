@@ -53,13 +53,17 @@ class City{
         Alamofire.request(.GET, url).responseJSON{ response in
             let result = response.result
             if let descDict = result.value as? Dictionary<String, AnyObject>{
+                print("2")
+                print(self.name)
                 if let name = descDict["name"] as? String{
                     self._name = name
+                    print("1")
                     print(self.name)
                 }
             }else{
                 self._name = ""
             }
         }
+        completed()
     }
 }

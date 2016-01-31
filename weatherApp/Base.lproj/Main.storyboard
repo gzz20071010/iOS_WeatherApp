@@ -88,17 +88,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DaK-4f-l1E">
-                                <rect key="frame" x="37" y="84" width="300" height="500"/>
+                                <rect key="frame" x="16" y="20" width="343" height="609"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location2" translatesAutoresizingMaskIntoConstraints="NO" id="0in-OZ-akk">
-                                        <rect key="frame" x="125" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="146" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="4el-aw-vOT"/>
                                             <constraint firstAttribute="width" constant="50" id="fKD-zP-6lT"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yda-hn-bHb">
-                                        <rect key="frame" x="78.5" y="50" width="143" height="50"/>
+                                        <rect key="frame" x="100" y="50" width="143" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="DbA-DX-B1A"/>
                                         </constraints>
@@ -107,10 +107,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="1R7-Vj-fzb">
-                                        <rect key="frame" x="0.0" y="100" width="300" height="216.5"/>
+                                        <rect key="frame" x="0.0" y="100" width="343" height="264"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35 F°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whm-ak-TIU">
-                                        <rect key="frame" x="90" y="316" width="119.5" height="183.5"/>
+                                        <rect key="frame" x="112" y="364" width="119.5" height="245"/>
                                         <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="50"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -120,6 +120,12 @@
                                     <constraint firstAttribute="height" constant="500" id="9L6-Gd-LDA"/>
                                     <constraint firstAttribute="width" constant="300" id="mGw-Uf-FXe"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9L6-Gd-LDA"/>
+                                        <exclude reference="mGw-Uf-FXe"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1B-Q8-Wi3">
                                 <rect key="frame" x="239" y="629" width="120" height="30"/>
@@ -137,18 +143,34 @@
                         </subviews>
                         <color key="backgroundColor" red="0.82803781249999997" green="0.82901243589999996" blue="0.84388505650000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="DaK-4f-l1E" secondAttribute="trailing" id="2BS-dj-jbv"/>
                             <constraint firstItem="X1B-Q8-Wi3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4tk-bF-ATd"/>
                             <constraint firstItem="DaK-4f-l1E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DDu-HF-Xq1"/>
+                            <constraint firstItem="DaK-4f-l1E" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="MUz-MY-9fn"/>
+                            <constraint firstItem="X1B-Q8-Wi3" firstAttribute="top" secondItem="DaK-4f-l1E" secondAttribute="bottom" id="OiZ-RL-rO3"/>
                             <constraint firstItem="DaK-4f-l1E" firstAttribute="top" relation="greaterThanOrEqual" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="QL1-Mh-nbh"/>
+                            <constraint firstItem="DaK-4f-l1E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nTL-ok-bes"/>
                             <constraint firstItem="DaK-4f-l1E" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uuI-RD-8d5"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="X1B-Q8-Wi3" secondAttribute="bottom" constant="8" id="xP1-4B-EjJ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="DDu-HF-Xq1"/>
+                                <exclude reference="QL1-Mh-nbh"/>
+                                <exclude reference="uuI-RD-8d5"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="nameLbl" destination="yda-hn-bHb" id="yif-mQ-EqS"/>
+                        <outlet property="tempLbl" destination="Whm-ak-TIU" id="yPQ-13-d8i"/>
+                        <outlet property="weatherPicture" destination="1R7-Vj-fzb" id="j2Y-JK-9Uy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-400.5" y="389.5"/>
+            <point key="canvasLocation" x="-564.5" y="389.5"/>
         </scene>
     </scenes>
     <resources>
